@@ -38,13 +38,13 @@ export const App = (props) => {
     // Save note to service
     async function onSubmit(note){
         if (note.id) {
-            await service.update(note);
+            await service.saveNote(note);
             setNotes((prevNotes) => prevNotes.map((n) => (n.id === note.id ? note : n)));
           } else {
             const newNote = await service.saveNote(note);
             setNotes((prevNotes) => [...prevNotes, newNote]);
           }
-          setSelected(null);
+          setSelected();
     }
 
     // Unselect note
