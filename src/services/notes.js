@@ -10,7 +10,7 @@ export class NotesService {
      * Gets up-to-date list of notes
      */
     async getNotes(){
-        return this.notes
+        return this.notes;
     }
 
     update(updateCb){
